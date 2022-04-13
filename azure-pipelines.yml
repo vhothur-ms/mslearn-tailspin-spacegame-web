@@ -1,3 +1,10 @@
+resources:
+  repositories:
+    - repository: Tools
+      type: git
+      endpoint: https://msazure.visualstudio.com/DefaultCollection/One/_git/Intune-Tools-Shared
+      name: MyProject/SharedTools
+      
 trigger:
 - '*'
 
@@ -12,6 +19,12 @@ variables:
   dotnetSdkVersion: '5.x'
 
 steps:
+- checkout: self
+- checkout: Tools
+
+- script: dir $(Build.SourcesDirectory)
+  displayName: 'List all directories'
+
 - task: UseDotNet@2
   displayName: 'Use .NET SDK $(dotnetSdkVersion)'
   inputs:
