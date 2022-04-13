@@ -2,8 +2,9 @@ resources:
   repositories:
     - repository: Tools
       type: git
-      endpoint: git://One/Intune-Tools-Shared@develop
-      name: Space Game - web - Pipeline/IntuneTools
+      endpoint: Intune-Tools-Shared
+      name: 'Space Game - web - Pipeline/IntuneTools'
+      ref: develop
       
 trigger:
 - '*'
@@ -23,7 +24,6 @@ steps:
 - checkout: Tools
 
 - script: dir $(Build.SourcesDirectory)
-  displayName: 'List all directories'
 
 - task: UseDotNet@2
   displayName: 'Use .NET SDK $(dotnetSdkVersion)'
