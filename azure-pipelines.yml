@@ -2,8 +2,8 @@ resources:
   repositories:
     - repository: Tools
       type: git
-      endpoint: https://msazure.visualstudio.com/DefaultCollection/One/_git/Intune-Tools-Shared
-      name: MyProject/SharedTools
+      endpoint: git://One/Intune-Tools-Shared@develop
+      name: Space Game - web - Pipeline/IntuneTools
       
 trigger:
 - '*'
